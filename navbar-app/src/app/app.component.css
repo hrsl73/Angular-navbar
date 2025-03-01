@@ -1,0 +1,108 @@
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .dark-mode .navbar {
+    background-color: #333;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .nav-links button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
+  /* Active Button */
+  .nav-links button.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+  }
+  
+  /* Search Bar */
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-container input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .search-container button {
+    background: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .search-container button:hover {
+    background-color: lightgray;
+  }
+  
+  /* Dark Mode Toggle Button */
+  .dark-mode-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
+  /* Dynamic Content */
+  .content {
+    padding: 20px;
+    transition: color 0.3s ease;
+  }
+  

@@ -1,0 +1,35 @@
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">My App</div>
+  
+  <ul class="nav-links">
+    <li><button (click)="navigate('home')" [class.active]="selectedPage === 'home'">Home</button></li>
+    <li><button (click)="navigate('about')" [class.active]="selectedPage === 'about'">About</button></li>
+    <li><button (click)="navigate('contact')" [class.active]="selectedPage === 'contact'">Contact</button></li>
+  </ul>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search..." />
+    <button (click)="search()">🔍</button>
+  </div>
+
+  <!-- Dark Mode Toggle -->
+  <button class="dark-mode-toggle" (click)="toggleDarkMode()">
+    {{ darkMode ? '☀️ Light Mode' : '🌙 Dark Mode' }}
+  </button>
+</nav>
+
+<!-- Dynamic Content -->
+<div class="content">
+  <app-home *ngIf="selectedPage === 'home'"></app-home>
+  <app-about *ngIf="selectedPage === 'about'"></app-about>
+  <app-contact *ngIf="selectedPage === 'contact'"></app-contact>
+</div>
+
+<nav>
+  <a routerLink="/home" routerLinkActive="active">Home</a>
+  <a routerLink="/about" routerLinkActive="active">About</a>
+  <a routerLink="/contact" routerLinkActive="active">Contact</a>
+</nav>
+<router-outlet></router-outlet>
