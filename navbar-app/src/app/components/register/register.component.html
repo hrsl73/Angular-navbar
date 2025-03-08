@@ -1,0 +1,48 @@
+<div class="register-container">
+  <form [formGroup]="userForm" (ngSubmit)="onRegister()" class="register-form">
+    <h2>Register</h2>
+    
+    <!-- Error Message Display -->
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+    
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input 
+        type="text" 
+        id="username"
+        formControlName="username"
+        placeholder="Enter username"
+        [class.is-invalid]="hasError('username')"
+      >
+      <!-- Username validation messages -->
+      <div class="validation-message" *ngIf="hasError('username')">
+        {{ getErrorMessage('username') }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        id="password"
+        formControlName="password"
+        placeholder="Enter password"
+        [class.is-invalid]="hasError('password')"
+      >
+      <!-- Password validation messages -->
+      <div class="validation-message" *ngIf="hasError('password')">
+        {{ getErrorMessage('password') }}
+      </div>
+    </div>
+
+    <button 
+      type="submit" 
+      class="register-button" 
+      [disabled]="userForm.invalid && submitted"
+    >
+      Register
+    </button>
+  </form>
+</div> 

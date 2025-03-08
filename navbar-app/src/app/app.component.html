@@ -3,9 +3,10 @@
   <div class="logo">My App</div>
   
   <ul class="nav-links">
-    <li><button (click)="navigate('home')" [class.active]="selectedPage === 'home'">Home</button></li>
-    <li><button (click)="navigate('about')" [class.active]="selectedPage === 'about'">About</button></li>
-    <li><button (click)="navigate('contact')" [class.active]="selectedPage === 'contact'">Contact</button></li>
+    <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    <li><a routerLink="/register" routerLinkActive="active">Register</a></li>
   </ul>
 
   <!-- Search Bar -->
@@ -20,16 +21,4 @@
   </button>
 </nav>
 
-<!-- Dynamic Content -->
-<div class="content">
-  <app-home *ngIf="selectedPage === 'home'"></app-home>
-  <app-about *ngIf="selectedPage === 'about'"></app-about>
-  <app-contact *ngIf="selectedPage === 'contact'"></app-contact>
-</div>
-
-<nav>
-  <a routerLink="/home" routerLinkActive="active">Home</a>
-  <a routerLink="/about" routerLinkActive="active">About</a>
-  <a routerLink="/contact" routerLinkActive="active">Contact</a>
-</nav>
 <router-outlet></router-outlet>
